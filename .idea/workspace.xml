@@ -25,8 +25,8 @@
       <file leaf-file-name="TitlesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TitlesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40888888">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.51111114">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -1202,8 +1202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12777779">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.23">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <marker date="1451894727000" expanded="false" signature="-1:-1" placeholder="..." />
             <marker date="1451894727000" expanded="true" signature="-1:-1" placeholder="..." />
@@ -1214,38 +1214,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4888889">
-          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.81777775">
+          <caret line="54" column="9" selection-start-line="46" selection-start-column="5" selection-end-line="54" selection-end-column="9" />
           <folding>
-            <marker date="1451900279000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
-            <marker date="1451900279000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
+            <marker date="1451901639000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TitlesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40888888">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.51111114">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
           <folding />
         </state>
       </provider>

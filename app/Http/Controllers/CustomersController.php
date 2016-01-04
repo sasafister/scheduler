@@ -50,6 +50,7 @@ class CustomersController extends Controller
 
         if ($customer->id != Auth::user()->id)
         {
+
             return redirect()->route("admin", Auth::user()->id);
         }
 

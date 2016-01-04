@@ -29,10 +29,16 @@ class TitlesController extends Controller
     {
         $customerId = Customer::where('id', $id )->firstOrFail();
 
-//        dd($customerId);
+        /* if customer is not authenticated */
+
+        if ($customerId->id != Auth::user()->id)
+        {
+
+            return redirect()->route("admin", Auth::user()->id);
+        }
+
         $titles = Title::where('customer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         $users = User::where('customer_id', $customerId->id)->get();
-//        dd($users);
 
         $allUsers = ["Select"];
         $i = 0;
@@ -61,10 +67,9 @@ class TitlesController extends Controller
      */
     public function store(Request $request, Title $title, $id)
     {
-
         $title->title = $request->title;
         $title->time = $request->time;
-        $title->user_id = $request->author;
+        $title->user_id = $id;
         $title->customer_id = Auth::user()->id;
 
         // spremiti u bazu customer id za titles
