@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Customers;
+use App\Exceptions\PermissionDenied;
 use App\Title;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Mockery\Exception;
 
@@ -29,22 +29,11 @@ class CustomersController extends Controller
     {
         $customer = Customer::findOrFail($id);
 
-        if ($customer->id != Auth::user()->id) {
-            return redirect()->route("admin", Auth::user()->id);
-//            throw new \Mockery\CountValidator\Exception;
 
+        if ($customer->id != Auth::user()->id)
+        {
+            return redirect()->route("admin", Auth::user()->id);
         }
-//        $titles = Title::orderBy('created_at', 'desc')->get();
-//            $users = User::all();
-//
-//        $allUsers = [];
-//        $i = 0;
-//        for($i; $i < count($users); $i++) {
-//            $allUsers[] = $users[$i]->name;
-//        }
-//
-//
-//        return view("titles.index", compact('titles', 'allUsers'));
 
         return view('admin.index', compact('customer'));
     }
@@ -54,9 +43,17 @@ class CustomersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+
+
+        if ($customer->id != Auth::user()->id)
+        {
+            return redirect()->route("admin", Auth::user()->id);
+        }
+
+        return view('admin.create', compact('customer'));
     }
 
     /**
@@ -71,11 +68,12 @@ class CustomersController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         $user->name = $request->first_name . ' ' . $request->last_name;
 //        $user->email= $request->email;
+        $user->customer_id = $id;
 //        $user->password = $request->password;
         $user->save();
 
@@ -126,4 +124,6 @@ class CustomersController extends Controller
     {
         //
     }
+
+
 }

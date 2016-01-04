@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-clockpicker.min.css') }}">
-    <link rel="stylesheet" href="http://adria.digital/zimo/css2.css">
+    {{--<link rel="stylesheet" href="http://adria.digital/zimo/css2.css">--}}
     {{--<link rel="stylesheet" href="{{ asset('css/form-elements.css') }}">--}}
     {{--<link rel="stylesheet" href="{{ asset('css/style.css') }}">--}}
 
@@ -22,7 +22,12 @@
 </head>
 <body>
 <div class="container">
-    @yield('content')
+    <div class="container">
+        <div class="content col-md-8 col-md-offset-2">
+            @yield('content')
+
+        </div>
+    </div>
 </div>
 </body>
 <script type="text/javascript">

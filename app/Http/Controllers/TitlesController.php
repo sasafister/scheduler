@@ -28,9 +28,11 @@ class TitlesController extends Controller
     public function index($id)
     {
         $customerId = Customer::where('id', $id )->firstOrFail();
+
 //        dd($customerId);
         $titles = Title::where('customer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-        $users = User::all();
+        $users = User::where('customer_id', $customerId->id)->get();
+//        dd($users);
 
         $allUsers = ["Select"];
         $i = 0;

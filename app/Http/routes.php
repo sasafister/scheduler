@@ -13,11 +13,7 @@
 
 Route::get('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@index']);
 Route::post('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@store']);
-//Route::post('/{id}', ['as' => 'admin', function () {
-//    return "success";
-//}]);
-
-//Route::get('/{id}/titles',['as' => 'customerRoute', 'uses' => 'CustomersController@index']);
+Route::get('{id}/create', 'CustomersController@create');
 
 Route::group(['prefix' => '{id}'], function() {
 
