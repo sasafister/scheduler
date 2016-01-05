@@ -27,26 +27,19 @@ class TitlesController extends Controller
      */
     public function index($id)
     {
-        $customerId = Customer::where('id', $id )->firstOrFail();
+        $customer = Customer::where('id', $id )->firstOrFail();
 
         /* if customer is not authenticated */
 
-        if ($customerId->id != Auth::user()->id)
+        if ($customer->id != Auth::user()->id)
         {
-
             return redirect()->route("admin", Auth::user()->id);
         }
 
         $titles = Title::where('customer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-        $users = User::where('customer_id', $customerId->id)->get();
+        $allUsers = $this->getAllUsers($customer);
 
-        $allUsers = ["Select"];
-        $i = 0;
-        for($i; $i < count($users); $i++) {
-            $allUsers[] = $users[$i]->name;
-        }
-
-        return view("titles.index", compact('titles', 'allUsers', 'customerId'));
+        return view("titles.index", compact('titles', 'allUsers', 'customer'));
     }
 
     /**
@@ -65,20 +58,21 @@ class TitlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Title $title, $id)
+    public function store(Request $request, Title $title, $id, User $user)
     {
+
         $title->title = $request->title;
         $title->time = $request->time;
-        $title->user_id = $id;
-        $title->customer_id = Auth::user()->id;
 
-        // spremiti u bazu customer id za titles
+        $userId = $user->where('customer_id', Auth::user()->id)->get()[($request->author)-1]->id;
+
+        $title->user_id = $userId;
+        $title->customer_id = Auth::user()->id;
 
         $title->save();
 
         return redirect()->route("{id}.titles.index", $id);
-//        return redirect()->back();
-//        return view('welcome');
+
     }
 
     /**
@@ -133,5 +127,24 @@ class TitlesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * @param $customer
+     * @return array
+     */
+    private function getAllUsers($customer)
+    {
+
+//        dd($users = User::where('customer_id', $customer->id)->get());
+
+
+        $users = User::where('customer_id', $customer->id)->get();
+        $allUsers = ["Select"];
+        $i = 0;
+        for ($i; $i < count($users); $i++) {
+            $allUsers[] = $users[$i]->name;
+        }
+        return $allUsers;
     }
 }

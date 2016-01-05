@@ -21,7 +21,11 @@
 
 </head>
 <body>
+
+@include('navbar.index')
+
 <div class="container">
+
     <div class="container">
         <div class="content col-md-8 col-md-offset-2">
             @yield('content')

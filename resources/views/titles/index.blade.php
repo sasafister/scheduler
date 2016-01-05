@@ -3,7 +3,7 @@
 @section('content')
 
     <h1>Zimo Scheduler</h1>
-        {!!  Form::open(["method" => "POST", "action" => ["TitlesController@store", $customerId], "class" => "form-inline"]) !!}
+        {!!  Form::open(["method" => "POST", "action" => ["TitlesController@store", $customer], "class" => "form-inline"]) !!}
         {!! csrf_field() !!}
            @include('partials.form', ['submitButtonText' => 'Planiraj', 'user' => $allUsers, 'time' => Carbon\Carbon::now()->format('h:i')])
         {!! Form::close() !!}
@@ -24,7 +24,7 @@
                         <td>{{ $title->time }}</td>
                         <td>{{ $title->user->name }}</td>
                         <td>{{ $title->title }}</td>
-                        <td>{!! link_to_action('TitlesController@show', 'Edit', [$customerId, $title->id]) !!}</td>
+                        <td>{!! link_to_action('TitlesController@show', 'Edit', [$customer, $title->id]) !!}</td>
                     </tr>
                 @elseif($title->created_at < \Carbon\Carbon::today())
                     <tr class="active text-muted">

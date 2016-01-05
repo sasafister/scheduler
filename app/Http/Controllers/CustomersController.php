@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Customers;
-use App\Exceptions\PermissionDenied;
 use App\Title;
 use App\User;
 use Illuminate\Http\Request;
@@ -27,16 +26,12 @@ class CustomersController extends Controller
      */
     public function index($id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = Customer::find($id);
 
+        $titles = Title::where('customer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $allUsers = $this->getAllUsers($customer);
 
-        if ($customer->id != Auth::user()->id)
-        {
-            return redirect()->route("admin", Auth::user()->id);
-        }
-
-        return view('admin.index', compact('customer'));
-    }
+        return view("titles.index", compact('titles', 'allUsers', 'customer'));    }
 
     /**
      * Show the form for creating a new resource.
@@ -124,6 +119,22 @@ class CustomersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * @param $customer
+     * @return array
+     */
+    private function getAllUsers($customer)
+    {
+        $users = User::where('customer_id', $customer->id)->get();
+
+        $allUsers = ["Select"];
+        $i = 0;
+        for ($i; $i < count($users); $i++) {
+            $allUsers[] = $users[$i]->name;
+        }
+        return $allUsers;
     }
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Create new user</h1>
+    <h1>Create new contributer</h1>
 
     {!! Form::open(['method' => 'POST', 'route' => ['admin', $customer->id]]) !!}
 
@@ -25,10 +25,14 @@
         {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Confirm password...']) !!}
     </div>
 
-    <div class="col-md-6">
-        <div class="form-group">
-            {!! Form::submit('Register', ['class' => 'form-control btn btn-default']) !!}
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                {!! Form::submit('Add new contributer', ['class' => 'form-control btn btn-default']) !!}
+            </div>
         </div>
+
     </div>
 
     {!! Form::close() !!}

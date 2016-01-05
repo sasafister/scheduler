@@ -45,12 +45,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof ModelNotFoundException) {
             $e = new NotFoundHttpException($e->getMessage(), $e);
         }
-        if ($e instanceof PermissionDenied) {
-            return response()->view('errors.404', [], 404);
-            break;
-//            flash()->danger('Authentication Error');
-//            return redirect('/');
-        }
+
 
         return parent::render($request, $e);
     }

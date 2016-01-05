@@ -13,16 +13,16 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->visit('/3')
+             ->see('Scheduler');
     }
 
-    public function testAboutPage()
+    /** @test */
+
+    public function get_all_users_from_customer_class()
     {
-        $this->visit('about')
-            ->see('About page');
+        $users = new \App\User();
+
     }
-
-
 
 }
