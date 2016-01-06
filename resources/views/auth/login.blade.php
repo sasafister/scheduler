@@ -5,7 +5,7 @@
     <div class="col-md-6 col-md-offset-3">
     <h1>Login</h1>
 
-    {!! Form::open(['url' => '/']) !!}
+    {!! Form::open(['url' => ' ', 'method' => 'POST']) !!}
 
         <div class="form-group">
             {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Email...']) !!}

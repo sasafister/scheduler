@@ -24,7 +24,8 @@ Route::group(['prefix' => '{id}'], function() {
 
 // Authentication routes...
 Route::get('/', 'Auth\AuthController@getLogin');
-Route::post('/', 'Auth\AuthController@postLogin');
+Route::post('/', ['as' => 'post.login', 'uses' => 'Auth\AuthController@postLogin']);
+
 Route::get('/{id}/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
