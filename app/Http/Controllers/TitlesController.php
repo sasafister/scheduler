@@ -6,9 +6,7 @@ use App\Customer;
 use App\Title;
 use App\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class TitlesController extends Controller
@@ -27,6 +25,8 @@ class TitlesController extends Controller
      */
     public function index($id)
     {
+
+        session->flash()
         $customer = Customer::where('id', $id )->firstOrFail();
 
         /* if customer is not authenticated */
@@ -60,9 +60,15 @@ class TitlesController extends Controller
      */
     public function store(Request $request, Title $title, $id, User $user)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'time'  => 'required',
+            'author'=> 'required'
+
+        ]);
 
         $title->title = $request->title;
-        $title->time = $request->time;
+        $title->time = $request->time_submit;
 
         $userId = $user->where('customer_id', Auth::user()->id)->get()[($request->author)-1]->id;
 
@@ -140,9 +146,10 @@ class TitlesController extends Controller
 
 
         $users = User::where('customer_id', $customer->id)->get();
+
+
         $allUsers = ["Select"];
-        $i = 0;
-        for ($i; $i < count($users); $i++) {
+        for ($i = 0; $i < count($users); $i++) {
             $allUsers[] = $users[$i]->name;
         }
         return $allUsers;

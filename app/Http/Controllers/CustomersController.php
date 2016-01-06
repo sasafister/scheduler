@@ -134,6 +134,7 @@ class CustomersController extends Controller
         for ($i; $i < count($users); $i++) {
             $allUsers[] = $users[$i]->name;
         }
+
         return $allUsers;
     }
 
