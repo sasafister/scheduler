@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3adec7d1-a13e-4283-8355-86a54fe90003" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TitlesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TitlesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/titles/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/titles/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/titles/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/titles/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="learning-laravel-5.iws" />
@@ -28,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TitlesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TitlesController.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46333334">
-              <caret line="122" column="44" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.13172966">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -58,6 +54,7 @@
         <option value="$PROJECT_DIR$/resources/views/partials/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/titles/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TitlesController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -213,6 +210,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -1307,23 +1305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87222224">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-          <folding>
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="{&quot;selectMonths&quot;: true...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/titles/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17888889">
@@ -1370,8 +1351,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TitlesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46333334">
+        <state vertical-scroll-proportion="2.99">
           <caret line="122" column="44" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
+          <folding>
+            <marker date="1452080764000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Display a listing of the resource. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Show the form for creating a new resource. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Store a newly created resource in storage. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Display the specified resource. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Show the form for editing the specified resource. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Update the specified resource in storage. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" Remove the specified resource from storage. ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder=" @param $customer ..." />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452080764000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0988889">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1452079256000" expanded="true" signature="-1:-1" placeholder="{&quot;selectMonths&quot;: true...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13172966">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
         </state>
       </provider>
