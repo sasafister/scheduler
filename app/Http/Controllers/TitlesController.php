@@ -26,7 +26,6 @@ class TitlesController extends Controller
     public function index($id)
     {
 
-        session->flash()
         $customer = Customer::where('id', $id )->firstOrFail();
 
         /* if customer is not authenticated */
@@ -93,7 +92,7 @@ class TitlesController extends Controller
 
         $user = $title->user;
 
-//        dd(count($user));
+//        dd($title);
 
         return view('titles.edit', compact('title', 'user', 'id'));
     }
@@ -119,7 +118,10 @@ class TitlesController extends Controller
     public function update(Request $request, $customerId, $id)
     {
         $title = Title::findOrFail($id);
-        $title->update($request->all());
+        $title->update([
+            'title' => $request->title,
+            'time'  => $request->time_submit
+        ]);
 
         return redirect()->route("{id}.titles.index", $customerId);
 

@@ -3,11 +3,13 @@
 @section('content')
 
     <h1>Zimo Scheduler</h1>
-
+        <div>
         {!!  Form::open(["method" => "POST", "action" => ["TitlesController@store", $customer]]) !!}
-           @include('partials.form', ['submitButtonText' => 'Planiraj', 'user' => $allUsers])
+           @include('partials.form', ['submitButtonText' => 'Planiraj', 'user' => $allUsers, 'time' => ''])
         {!! Form::close() !!}
 
+        {{--div od unutarnje forme--}}
+        </div>
 
 
     <table class="table" style="margin-top: 10px;">
@@ -42,22 +44,4 @@
             </tbody>
         </table>
 
-@stop
-
-@section('footer')
-    <script>
-
-        $(document).ready(function() {
-            $('select').material_select();
-//             $('.clockpicker').clockpicker({
-//                donetext: "Done"
-//             });
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15, // Creates a dropdown of 15 years to control year
-                formatSubmit: 'yyyy-mm-dd'
-            });
-        });
-            $('.modal-trigger').leanModal();
-    </script>
 @stop

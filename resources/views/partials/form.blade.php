@@ -1,5 +1,5 @@
 @if(count($user) == 1)
-    {{--{!! Form::select('author', $user, null, ['class' => 'form-control']) !!}--}}
+{{--    {!! Form::select('author', $user, null, ['class' => 'form-control']) !!}--}}
 @else
         <div class="row">
             @include("errors.error")
@@ -13,20 +13,21 @@
                     {{--@endforeach--}}
                 {{--</select>--}}
             </div>
+@endif
 
             <div class="col s7">
                 {!! Form::text('title', null, ['class' => 'validate', 'placeholder' => 'Tematika / Članak']) !!}
 
             </div>
             <div class="col s2">
-                <input type="date" class="datepicker" placeholder="Pick a date" name="time">
+                <input type="date" class="datepicker" placeholder="Pick a date" name="time"
+                       value="{{ $time }}">
             </div>
             <div class="col s12">
             {!! Form::submit($submitButtonText, ['class' => 'btn waces-effect waves-light']) !!}
             </div>
 
-        </div>
-@endif
+
 
 
     {{--Clock--}}
