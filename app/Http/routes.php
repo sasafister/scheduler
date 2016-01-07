@@ -30,6 +30,6 @@ Route::post('/', ['as' => 'post.login', 'uses' => 'Auth\AuthController@postLogin
 
 Route::get('/{id}/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 
-// Registration routes...
+// Registration routes....
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');

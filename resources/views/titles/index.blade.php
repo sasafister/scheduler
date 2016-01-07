@@ -15,10 +15,6 @@
     <table class="table" style="margin-top: 10px;">
                 <thead>
                 <tr>
-                    <th class="col-md-1"></th>
-                    <th class="col-md-2"></th>
-                    <th class="col-md-7"></th>
-                    <th class="col-md-1"></th>
                 </tr>
                 </thead>
             <tbody>
@@ -29,6 +25,9 @@
                         <td class="">{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
                         <td>{{ $title->user->name }}</td>
                         <td>{{ $title->title }}</td>
+                        <td><a href="#"><i class="tiny material-icons">thumb_down</i></td></a>
+                        <td>12</td>
+                        <td><a href="#"><i class="tiny material-icons">thumb_up</i></td></a>
                         <td>{!! link_to_action('TitlesController@show', 'Edit', [$customer, $title->id]) !!}</td>
                     </tr>
                 @elseif($title->created_at < \Carbon\Carbon::today())
