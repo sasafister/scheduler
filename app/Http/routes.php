@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('home', function() {
+    return redirect()->route('admin', Auth::user()->id);
+});
 Route::get('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@index']);
 Route::post('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@store']);
 Route::get('{id}/create', 'CustomersController@create');
