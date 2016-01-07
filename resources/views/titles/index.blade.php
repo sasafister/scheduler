@@ -23,10 +23,11 @@
                 @if($title->created_at > \Carbon\Carbon::today())
                     <tr class="">
                         <td class="">{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
+                        <td id="id">{{ $title->id}}</td>
                         <td>{{ $title->user->name }}</td>
                         <td>{{ $title->title }}</td>
-                        <td><a href="#"><i class="tiny material-icons">thumb_down</i></td></a>
-                        <td>12</td>
+                        <td><i id="upVote" class="tiny material-icons">thumb_down</i></td>
+                        <td id="numVote">{{ $title->votes }}</td>
                         <td><a href="#"><i class="tiny material-icons">thumb_up</i></td></a>
                         <td>{!! link_to_action('TitlesController@show', 'Edit', [$customer, $title->id]) !!}</td>
                     </tr>
@@ -43,4 +44,29 @@
             </tbody>
         </table>
 
+@stop
+
+@section('footer')
+<script>
+
+        var upvote = {
+            vote: $("#numVote").text(),
+            id: $("#id").text()
+        };
+
+        console.log(upvote);
+
+        $("#upVote").on("click", function() {
+            $.ajax({
+                type: 'POST',
+                url: '/upvote',
+                data: upvote,
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        });
+
+
+</script>
 @stop

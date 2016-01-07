@@ -11,7 +11,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <meta name="csrf-token" value="{{ csrf_token() }}">
 
 
     <!-- Latest compiled and minified JavaScript -->
@@ -31,6 +31,7 @@
     <div class="container">
         @yield('content')
     </div>
+        @yield('footer')
     <script>
 
         $(document).ready(function() {
@@ -43,6 +44,11 @@
                 selectYears: 15, // Creates a dropdown of 15 years to control year
                 format: 'd.m.yyyy.',
                 formatSubmit: 'yyyy-mm-dd'
+            });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('[name="_token"]').val()
+                }
             });
         });
     </script>
