@@ -16,15 +16,24 @@ Route::get('home', function() {
 });
 
 
+Route::post('/downvote/{id}', function($id) {
 
-Route::post('/upvote', function() {
+    $title = \App\Title::find($id);
+    $title->votes = $title->votes-1;
+
+    $title->save();
+
+    return $id;
+
+});
+Route::post('/upvote/{id}', function($id) {
 
     $title = \App\Title::find($id);
     $title->votes = $title->votes+1;
 
     $title->save();
 
-    return $title->votes;
+    return $id;
 
 });
 

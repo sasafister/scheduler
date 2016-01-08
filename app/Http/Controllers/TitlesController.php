@@ -35,7 +35,7 @@ class TitlesController extends Controller
             return redirect()->route("admin", Auth::user()->id);
         }
 
-        $titles = Title::where('customer_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $titles = Title::where('customer_id', Auth::user()->id)->orderBy('time', 'desc')->get();
         $allUsers = $this->getAllUsers($customer);
 
         return view("titles.index", compact('titles', 'allUsers', 'customer'));
