@@ -20,7 +20,7 @@
             <tbody>
 
             @foreach ($titles as $title)
-                @if($title->time > \Carbon\Carbon::today())
+                @if($title->time >= \Carbon\Carbon::today())
                     <tr>
                         <td>{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
                         {{--<td id="id">{{ $title->id}}</td>--}}
@@ -50,16 +50,24 @@
 <script>
 
     $("#upVote i").on("click", function() {
+
         $.ajax({
             type: 'POST',
             url: '/upvote/' + this.id,
-            
+            success: function(data) {
+                $('#numVote').html(data);
+//                $(this).html('<p> Your article was successfully added!</p>');
+            }
         });
     });
     $("#downVote i").on("click", function() {
         $.ajax({
             type: 'POST',
-            url: '/downvote/' + this.id
+            url: '/downvote/' + this.id,
+            success: function(data) {
+                $("#numVote").html(data);
+
+            }
         });
     });
 

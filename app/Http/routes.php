@@ -23,7 +23,7 @@ Route::post('/downvote/{id}', function($id) {
 
     $title->save();
 
-    return $id;
+    return $title->votes;
 
 });
 Route::post('/upvote/{id}', function($id) {
@@ -33,7 +33,7 @@ Route::post('/upvote/{id}', function($id) {
 
     $title->save();
 
-    return $id;
+    return $title->votes;
 
 });
 
