@@ -15,28 +15,6 @@ Route::get('home', function() {
     return redirect()->route('admin', Auth::user()->id);
 });
 
-
-Route::post('/downvote/{id}', function($id) {
-
-    $title = \App\Title::find($id);
-    $title->votes = $title->votes-1;
-
-    $title->save();
-
-    return $title->votes;
-
-});
-Route::post('/upvote/{id}', function($id) {
-
-    $title = \App\Title::find($id);
-    $title->votes = $title->votes+1;
-
-    $title->save();
-
-    return $title->votes;
-
-});
-
 Route::get('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@index']);
 Route::post('/{id}/', ['as' => 'admin', 'uses' => 'CustomersController@store']);
 Route::get('{id}/create', 'CustomersController@create');
@@ -44,6 +22,8 @@ Route::get('{id}/create', 'CustomersController@create');
 Route::group(['prefix' => '{id}'], function() {
 
     Route::resource('titles', "TitlesController");
+    Route::post('titles/upvote/{voteId}', "TitlesController@upVote");
+    Route::post('titles/downvote/{voteId}', "TitlesController@downVote");
 
 });
 

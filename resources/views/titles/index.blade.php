@@ -20,8 +20,8 @@
             <tbody>
 
             @foreach ($titles as $title)
-                @if($title->time >= \Carbon\Carbon::today())
-                    <tr>
+                @if($title->created_at >= \Carbon\Carbon::today())
+                    <tr id="votes">
                         <td>{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
                         {{--<td id="id">{{ $title->id}}</td>--}}
                         <td>{{ $title->user->name }}</td>
@@ -31,7 +31,7 @@
                         <td id="upVote"><i id="{{ $title->id }}" class="tiny material-icons">thumb_up</i></td>
                         <td>{!! link_to_action('TitlesController@show', 'Edit', [$customer, $title->id]) !!}</td>
                     </tr>
-                @elseif($title->time < \Carbon\Carbon::today())
+                @elseif($title->created_at < \Carbon\Carbon::today())
                     <tr class="grey-text">
                         <td>{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
                         <td>{{ $title->user->name }}</td>
@@ -49,21 +49,22 @@
 @section('footer')
 <script>
 
-    $("#upVote i").on("click", function() {
+    var url = "{{ url("/") }}" + "/{{ Auth::user()->id }}" + "/titles"
 
+    $("#upVote i").on("click", function() {
         $.ajax({
             type: 'POST',
-            url: '/upvote/' + this.id,
+            url: url + "/upvote" + "/" + this.id,
             success: function(data) {
                 $('#numVote').html(data);
-//                $(this).html('<p> Your article was successfully added!</p>');
             }
         });
     });
+
     $("#downVote i").on("click", function() {
         $.ajax({
             type: 'POST',
-            url: '/downvote/' + this.id,
+            url: url + "/downvote" + "/" + this.id,
             success: function(data) {
                 $("#numVote").html(data);
 

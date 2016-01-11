@@ -137,6 +137,29 @@ class TitlesController extends Controller
         //
     }
 
+
+    public function upVote($id, $voteId)
+    {
+
+        $title = \App\Title::find($voteId);
+        $title->votes = $title->votes+1;
+
+        $title->save();
+
+        return $title->votes;
+    }
+
+    public function downVote($id, $voteId)
+    {
+
+        $title = \App\Title::find($voteId);
+        $title->votes = $title->votes-1;
+
+        $title->save();
+
+        return $title->votes;
+    }
+
     /**
      * @param $customer
      * @return array
