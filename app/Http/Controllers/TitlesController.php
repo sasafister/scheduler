@@ -140,8 +140,9 @@ class TitlesController extends Controller
 
     public function upVote($id, $voteId)
     {
-
-        $title = \App\Title::find($voteId);
+//        return ($voteId);
+        $title = \App\Title::where('id', $voteId)->where('customer_id', $id)->firstOrFail();
+//        dd($title);
         $title->votes = $title->votes+1;
 
         $title->save();
