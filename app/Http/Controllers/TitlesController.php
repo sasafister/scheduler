@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Title;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -67,7 +68,8 @@ class TitlesController extends Controller
         ]);
 
         $title->title = $request->title;
-        $title->time = $request->time_submit;
+        $hour = Carbon::now('Europe/Zagreb')->toTimeString();
+        $title->time = $request->time_submit . " " . $hour;
 
         $userId = $user->where('customer_id', Auth::user()->id)->get()[($request->author)-1]->id;
 

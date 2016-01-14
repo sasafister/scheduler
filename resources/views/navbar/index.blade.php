@@ -14,7 +14,9 @@
         <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
             @if(Auth::check())
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a>
+            </li>
             @endif
 
         </ul>

@@ -1,3 +1,11 @@
 .input-field {
 	margin-top: 0!important;
 }
+
+tr i {
+	cursor: pointer;
+}
+
+#dropdown1 {
+	width: 200px!important;
+}

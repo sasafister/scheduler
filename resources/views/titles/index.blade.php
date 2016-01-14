@@ -31,16 +31,19 @@
                         <td id="upVote"><i id="{{ $title->id }}" class="tiny material-icons green-text">thumb_up</i></td>
                         <td>{!! link_to_action('TitlesController@show', 'Edit', [$customer, $title->id]) !!}</td>
                     </tr>
-                @elseif($title->created_at < \Carbon\Carbon::today())
+                @endif
+            @endforeach
+            @foreach($titles->slice(0,10) as $title)
+                @if($title->created_at < \Carbon\Carbon::today())
                     <tr class="grey-text">
                         <td>{{ \Carbon\Carbon::parse($title->time)->format('d.m.') }}</td>
                         <td>{{ $title->user->name }}</td>
                         <td>{{ $title->title }}</td>
                         <td></td>
                     </tr>
-
                 @endif
             @endforeach
+
             </tbody>
         </table>
 
@@ -67,11 +70,13 @@
     });
 
     $("#downVote i").on("click", function() {
+        var $id = this.id;
+
         $.ajax({
             type: 'POST',
-            url: url + "/downvote" + "/" + $(this).attr('id'),
+            url: url + "/downvote" + "/" + $id,
             success: function(data) {
-                $("#numVote").html(data);
+                $("#numVote" + $id).html(data);
 
             }
         });
